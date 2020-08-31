@@ -1,15 +1,16 @@
-from Ejercicios import colorImage
-import numpy as np
-from PIL import Image
+import Taller2
 import cv2
-import os
-
-colorImage.__init__().path=input("Introduzca la ruta que quiere: ")
-colorImage.__init__().nombre=input("Introduzca el nombre de la imagen")
-print("El ancho de un imagen es ", colorImage.displayProperties())
-print("Su imagen en escala de grises ", colorImage.makeGray())
-colorImage.colorizeRGB().eleccion='red'
-print("Su imagen rojiza  ", colorImage.makeGray())
-print("Sus tonos resaltados  ", colorImage.makeHue())
 
 
+if __name__ == '__main__':
+#Script el cual es utilizado para el punto 4 del taller
+    x=Taller2.ImageShape() #Se le pide al usuario las dimensiones de la imagen
+    x.GenerateShape()      #Se genera la figura
+    x.showShape()          #Se muestra la figura generada
+    clasifimagen=x.getShape()
+    print("La Figura generada es un", clasifimagen)  #Se imprime el tipo de figura
+    cv2.destroyAllWindows()
+    resultimagen=x.WhatShape()      #Se muestra la imagen ingresada por el usuario y el tipo de figura que es
+    print("La Figura del usuario es", resultimagen)
+
+# See PyCharm help at https://www.jetbrains.com/help/pycharm/
